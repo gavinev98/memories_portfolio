@@ -18,4 +18,10 @@ app.use(cors());
 const CONNECTION_URL = 'mongodb+srv://gavinev98:fire1234@cluster0.bxox6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => app.listen(PORT, () => console.log(`server running on port: $ ${PORT}`)))
+    .catch((error) => console.log(error.message));
+
+
+    //ensures that we get no error warning in the console.
+mongoose.set('useFindAndModify', false);
