@@ -2,5 +2,11 @@
 
 export const getPost = (req, res) => {
 
-    res.send('This Works!');
+    res.send('posts home');
+};
+
+
+export const createPost = (req, res) => {
+
+    res.send('create a post');
 };
