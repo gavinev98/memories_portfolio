@@ -1,7 +1,7 @@
 //all routes related to posts.
 
 import express from 'express';
-import {getPosts} from '../controllers/posts'
+import {getPost} from '../controllers/posts.js'
 
 //setting up router with express/
 const router = express.Router();
@@ -12,7 +12,7 @@ const router = express.Router();
 //not reached by localhost:5000/
 // reached by localhost:5000/posts
 
-router.get('/', getPosts);
+router.get('/', getPost);
 
 
 
