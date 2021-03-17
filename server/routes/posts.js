@@ -1,7 +1,7 @@
 //all routes related to posts.
 
 import express from 'express';
-
+import {getPosts} from '../controllers/posts'
 
 //setting up router with express/
 const router = express.Router();
@@ -12,9 +12,8 @@ const router = express.Router();
 //not reached by localhost:5000/
 // reached by localhost:5000/posts
 
-router.get('/', (req, res) => {
+router.get('/', getPosts);
 
-    res.send('This Works!');
-});
+
 
 export default router;
