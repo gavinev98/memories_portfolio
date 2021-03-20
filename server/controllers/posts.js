@@ -3,7 +3,7 @@
 import PostMessage from '../models/postsMessage.js'
 
 export const getPost = async (req, res) => {
-
+        //retrieving posts from mongo.
     try {
         const postMessages = await PostMessage.find();
 
@@ -21,6 +21,17 @@ export const getPost = async (req, res) => {
 
 
 export const createPost = (req, res) => {
+    //with posts requests you have acces to request.body.
+    const post = req.body;
 
-    res.send('create a post');
+    const newPost = new PostMessage(post);
+
+        try {
+
+            
+        } catch (error) {
+
+            
+        }
+   
 };
