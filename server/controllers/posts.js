@@ -20,7 +20,7 @@ export const getPost = async (req, res) => {
 };
 
 
-export const createPost = (req, res) => {
+export const createPost =  async (req, res) => {
     //with posts requests you have acces to request.body.
     const post = req.body;
 
@@ -28,10 +28,13 @@ export const createPost = (req, res) => {
 
         try {
 
+           await newPost.save();
+
+           res.status(201).json(newPost);
             
         } catch (error) {
 
-            
+            res.status(409).json({ error: error.message });
         }
    
 };
