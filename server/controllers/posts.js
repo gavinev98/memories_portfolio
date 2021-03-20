@@ -28,6 +28,9 @@ export const createPost =  async (req, res) => {
 
         try {
 
+            //link to different http codes depending on request.
+            // https://www.restapitutorial.com/httpstatuscodes.html
+
            await newPost.save();
 
            res.status(201).json(newPost);
