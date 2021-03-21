@@ -3,6 +3,8 @@ import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 
 import memories from '../src/images/memories_image.png';
 
+
+
 const App = () => {
     return (
 
@@ -19,7 +21,7 @@ const App = () => {
                             <Posts />
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            
+                          <Form />  
                         </Grid>
                     </Grid>
                 </Container>
