@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 
 import memories from '../src/images/memories_image.png';
@@ -9,11 +9,21 @@ import useStyles from './styles';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 
+//importing hooks
+//this will be used to dispatch and action.
+import { useDispatch } from 'react-redux';
 
 const App = () => {
 
     //calling styles class.
     const classes = useStyles();
+
+    //defining the dispatch.
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch();
+    }, [])
 
     return (
 
