@@ -5,7 +5,7 @@ import * as api from '../api';
 
 //redux thunk allows us to specify an additional arrow function
 //this will be an asynchronous action creator as we need to fetch the data.
-const getPosts = () => async (dispatch) => {
+ export const getPosts = () => async (dispatch) => {
 
     try {
         //data represents the posts.
