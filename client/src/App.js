@@ -9,6 +9,8 @@ import useStyles from './styles';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 
+import { getPosts } from './actions/posts';
+
 //importing hooks
 //this will be used to dispatch and action.
 import { useDispatch } from 'react-redux';
@@ -22,8 +24,8 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch();
-    }, [])
+        dispatch(getPosts());
+    }, [dispatch])
 
     return (
 
