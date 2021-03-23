@@ -6,8 +6,18 @@ import * as api from '../api';
 //redux thunk allows us to specify an additional arrow function
 //this will be an asynchronous action creator as we need to fetch the data.
 const getPosts = () => async (dispatch) => {
-    const action = { type: 'FETCH_ALL' , payload: []}
 
-    dispatch(action);
+    try {
+        //data represents the posts.
+        const { data } = await api.fetchPosts();
+        //dispatching the get post if sucessfully retrieved.
+        dispatch({type : 'FETCH_ALL', payload: data });
+
+    } catch (error) {
+        //output error if there is one.
+        console.log(error.message)
+
+        
+    }
 }
 
