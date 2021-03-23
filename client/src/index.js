@@ -14,5 +14,9 @@ import App from './App';
 //firstly we need to create a redux store
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+<Provider>
+<App />
+</Provider>,
+ document.getElementById('root'));
 
