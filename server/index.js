@@ -13,10 +13,11 @@ const app = express();
 
 
 //setting up bodyParser so that we can properly send a request.
-app.use(bodyParser.json({ limit: "30mb", extended: true}));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 //setting up cors.
 app.use(cors());
+app.use(bodyParser.json({ limit: "30mb", extended: true}));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
+
 
 //setting up middleware to connect our routes to application
 app.use('/posts', postRoutes);
