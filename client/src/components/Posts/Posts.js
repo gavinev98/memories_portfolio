@@ -10,7 +10,10 @@ const Posts = () => {
         //calling styles class.
         const classes = useStyles();
 
+        //using selector functionality to retrieve state.
         const posts = useSelector((state) => state.posts);
+        console.log(posts);
+        
 
     return (
         <>

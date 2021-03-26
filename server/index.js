@@ -10,14 +10,16 @@ import postRoutes from './routes/posts.js'
 const app = express();
 
 
-//setting up middleware to connect our routes to application
-app.use('/posts', postRoutes);
+
 
 //setting up bodyParser so that we can properly send a request.
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 //setting up cors.
 app.use(cors());
+
+//setting up middleware to connect our routes to application
+app.use('/posts', postRoutes);
 
 //setting up mongoDB with cloud atlas version.
 const CONNECTION_URL = 'mongodb+srv://gavinev98:fire1234@cluster0.bxox6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
