@@ -25,7 +25,7 @@ const Form = () => {
 
 
      //creating handler function for onsubmit
-     const handleSubmit = () => {
+     const handleSubmit = (e) => {
         //always use this to prevent browser refresh.
         e.preventDefault();
 
@@ -84,7 +84,7 @@ const Form = () => {
 
             </div>
 
-                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth> Submit </Button>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth > Submit </Button>
                 <Button  variant="contained" color="secondary" size="small" onClick={clear} fullWidth> Clear </Button>
 
             </form>

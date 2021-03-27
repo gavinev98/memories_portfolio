@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.get('/', getPost);
 
-router.get('/create', createPost);
+router.post('/', createPost);
 
 
 
