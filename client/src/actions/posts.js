@@ -27,7 +27,7 @@ export const createPost = (post) => async (dispatch) => {
     try {
 
         const { data } = await api.createPost(post);
-        //dispatch creation of post.
+        //dispatch creation of post to reducer.
         dispatch({ type: 'CREATE', payload: data})
 
 
