@@ -21,3 +21,18 @@ import * as api from '../api';
     }
 }
 
+
+//asynchronous function for creation of post.
+export const createPost = (post) => async (dispatch) => {
+    try {
+
+        const { data } = await api.createPost(post);
+        //dispatch creation of post.
+        dispatch({ type: 'CREATE', payload: data})
+
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
