@@ -17,8 +17,12 @@ const Posts = () => {
 
     return (
        !posts.length ? <CircularProgress /> : (
-        <Grid>
-
+        <Grid className={classes.container} container alignItems="stretch" spacing={3}>
+            {posts.map((post) => (
+                <Grid key={post._id} item xs={12} sm={6}> 
+                <Post post={post} />
+                </Grid>
+            ))}
         </Grid>
        )
     );
