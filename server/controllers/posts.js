@@ -1,6 +1,7 @@
 //all logic will be stored in the controllers.
 //we can now import our model from the model folder for PostMessage
 import PostMessage from '../models/postsMessage.js'
+import { Mongoose } from 'mongoose';
 
 export const getPost = async (req, res) => {
         //retrieving posts from mongo.
@@ -44,3 +45,20 @@ export const createPost =  async (req, res) => {
         }
    
 };
+
+
+export const updatePost = async (req, res) => {
+        // posts/12
+        //we first need to retrieve the id from the request which
+        //has been setup in the routes.
+       const { id: _id } = req.params;
+
+       if(!Mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send("No post with that id");
+
+       
+
+
+
+
+
+}
