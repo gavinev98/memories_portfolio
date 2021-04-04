@@ -12,7 +12,7 @@ const Posts = () => {
 
         //using selector functionality to retrieve state.
         const posts = useSelector((state) => state.posts);
-        console.log(posts);
+       
         
 
     return (

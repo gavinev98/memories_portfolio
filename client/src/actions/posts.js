@@ -10,8 +10,11 @@ import * as api from '../api';
     try {
         //data represents the posts.
         const { data } = await api.fetchPosts();
+
+      
         //dispatching the get post if sucessfully retrieved.
         dispatch({type : 'FETCH_ALL', payload: data });
+        console.log("postings" + data);
 
     } catch (error) {
         //output error if there is one.
