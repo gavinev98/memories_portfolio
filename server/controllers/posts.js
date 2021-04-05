@@ -53,8 +53,14 @@ export const updatePost = async (req, res) => {
         //has been setup in the routes.
        const { id: _id } = req.params;
 
+       //we recieve the updated post details from the request body
+       const post = req.body;
+
+       //check to see if the ID is a valid mongoose id.
        if(!Mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send("No post with that id");
 
+        //finding the post by ID and updating its details.
+      const updatedPost =  await PostMessage.findByIdAndUpdate(_id, post, { new: true});
        
 
 
