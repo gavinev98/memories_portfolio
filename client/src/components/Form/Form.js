@@ -5,7 +5,11 @@ import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/posts';
 import useStyles from './styles';
 
-const Form = () => {
+//GET Curent ID of post we are on,
+
+
+
+const Form = ({currentID, setCurrentID}) => {
 
      //calling styles class.
      const classes = useStyles();
@@ -29,10 +33,17 @@ const Form = () => {
         //always use this to prevent browser refresh.
         e.preventDefault();
 
+        if(currentID) {
+            dispatch(updatePost(currentID, postData));
+        } else {
+
         dispatch(createPost(postData));
-
-
+        
+        }
      }
+
+     //creating handler for updating a post.
+
      
      //setting up clear field to reset states of form.
      const clear = () => {
