@@ -1,7 +1,7 @@
 //all logic will be stored in the controllers.
 //we can now import our model from the model folder for PostMessage
 import PostMessage from '../models/postsMessage.js'
-import { Mongoose } from 'mongoose';
+import Mongoose from 'mongoose';
 
 export const getPost = async (req, res) => {
         //retrieving posts from mongo.
