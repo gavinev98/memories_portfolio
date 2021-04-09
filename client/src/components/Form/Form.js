@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
+
 
 //GET Curent ID of post we are on,
 
@@ -16,6 +17,11 @@ const Form = ({currentID, setCurrentID}) => {
 
      //importing dispatch to dispatch creation of post action.
      const dispatch = useDispatch();
+
+      //using selector functionality to retrieve the currentID state which is set onclick of the post.
+      const post = useSelector((state) => currentID ? state.posts.find((p) => p._id == currentID) : null);
+
+
 
      //creating a state for the post
      const [postData, setPostData] = 
