@@ -18,7 +18,7 @@ import { useDispatch } from 'react-redux';
 const App = () => {
 
     //getting and setting the current ID.
-    const [currentID, setCurrentID] = useState(null);
+    const [currentID, setCurrentID] = useState(0);
 
     //calling styles class.
     const classes = useStyles();
