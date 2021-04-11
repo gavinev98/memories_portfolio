@@ -64,7 +64,7 @@ const Form = ({currentID, setCurrentID}) => {
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-            <Typography variant="h6">Creating a Memory</Typography>
+    <Typography variant="h6">{currentID ? 'Editing Memory' : 'Creating Memory'}</Typography>
             <TextField 
             name="creator" 
             variant="outlined" 
