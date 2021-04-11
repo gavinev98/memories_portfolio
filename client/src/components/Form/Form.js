@@ -44,11 +44,12 @@ const Form = ({currentID, setCurrentID}) => {
 
         if(currentID) {
             dispatch(updatePost(currentID, postData));
+           
         } else {
-
-        dispatch(createPost(postData));
-        
+            dispatch(createPost(postData));
         }
+        //clear fields when either operation is executed.
+        clear();
      }
 
      //creating handler for updating a post.
