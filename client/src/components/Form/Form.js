@@ -19,7 +19,7 @@ const Form = ({currentID, setCurrentID}) => {
      const dispatch = useDispatch();
 
       //using selector functionality to retrieve the currentID state which is set onclick of the post.
-      const post = useSelector((state) => currentID ? state.posts.find((p) => p._id == currentID) : null);
+      const post = useSelector((state) => currentID ? state.posts.find((p) => p._id === currentID) : null);
 
     //this useEffect will run when the post varaible changes.
       useEffect(() => {
@@ -56,7 +56,9 @@ const Form = ({currentID, setCurrentID}) => {
      
      //setting up clear field to reset states of form.
      const clear = () => {
+        setCurrentID(0);
 
+        setPostData({ creator : '', title: '', message: '', tags: '', selectedFile: ''});
      }
 
     return (

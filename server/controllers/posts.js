@@ -65,7 +65,5 @@ export const updatePost = async (req, res) => {
         //send over the updated post.
       res.json(updatedPost);
 
-
-
-
+    
 }
