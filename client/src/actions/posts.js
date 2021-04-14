@@ -71,3 +71,17 @@ export const deletePost = (id) => async (dispatch) => {
     }
 }
 
+
+//setting uo the likePost action
+export const likePost = (id) => async (dispatch) => {
+
+    try {
+        //making api request.
+        await api.likePost(id);
+        //dispatching id to reducer
+        dispatch({ type: 'LIKE_POST', payload: id})
+
+    } catch (error) {
+        console.log(error);    
+    }
+}
