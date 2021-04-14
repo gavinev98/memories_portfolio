@@ -58,7 +58,7 @@ export const updatePost = (id, post) => async (dispatch) => {
 
 
 //setting up the deletePost action.
-export const deletePost = (id) => (dispatch) => {
+export const deletePost = (id) => async (dispatch) => {
 
     try {
 
