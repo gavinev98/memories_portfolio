@@ -1,7 +1,7 @@
 //all routes related to posts.
 
 import express from 'express';
-import {getPost, createPost, updatePost, deletePost} from '../controllers/posts.js'
+import {getPost, createPost, updatePost, deletePost, likePost} from '../controllers/posts.js'
 
 //setting up router with express/
 const router = express.Router();
@@ -21,6 +21,9 @@ router.patch('/:id', updatePost);
 
 //delete request
 router.delete('/:id', deletePost);
+
+//like request
+router.patch('/:id/likePost', likePost);
 
 
 export default router;
